@@ -1,9 +1,4 @@
-Problem Statement
-This exercise includes 3 bonuses and 10 hints (hover over the hint links before clicking on them).
-
-We recommend Intermediate-level users solve the first 2 bonuses for this exercise.
-
-I'd like you to write a class representing a 3-dimensional point.
+## Problem Statement
 
 The Point class must accept 3 values on initialization (x, y, and z) and have x, y, and z attributes. It must also have a helpful string representation. Additionally, point objects should be comparable to each other (two points are equal if their coordinates are the same and not equal otherwise).
 
@@ -35,7 +30,7 @@ Point(x=5, y=7, z=9)
 Point(x=3, y=3, z=3)
 **Bonus 2**
 ```
-For the second bonus, I'd like you to allow Point objects to be scaled up and down by numbers. ✔️
+**For the second bonus**, I'd like you to allow Point objects to be scaled up and down by numbers. ✔️
 
 ```>>> p1 = Point(1, 2, 3)
 >>> p2 = p1 * 2
@@ -44,7 +39,7 @@ Point(x=2, y=4, z=6)
 **Bonus 3**
 ```
 
-For the third bonus, I'd like you to allow Point objects to be unpacked using multiple assignment like this ✔️:
+**For the third bonus**, I'd like you to allow Point objects to be unpacked using multiple assignment like this ✔️:
 
 ```>>> p1 = Point(1, 2, 3)
 >>> x, y, z = p1
