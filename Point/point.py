@@ -24,7 +24,6 @@ class Point:
         return Point(*map(operator.sub, self, other))
 
     def __mul__(self, other):
-        # return Point(*tuple([x * other for x in self]))
         return Point(*[x * other for x in self])
 
     __rmul__ = __mul__
