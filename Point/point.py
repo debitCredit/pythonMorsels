@@ -1,36 +1,30 @@
+import operator
+
+
 class Point:
 
     def __init__(self, x, y, z):
-        self.x, self.y, self.z = x, y, z
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __iter__(self):
+        return iter((self.x, self.y, self.z))
 
     def __repr__(self):
         return f"Point(x={self.x}, y={self.y}, z={self.z})"
 
     def __eq__(self, other):
-        return (self.x, self.y, self.z) == (other.x, other.y, other.z)
+        return tuple(self) == tuple(other)
 
     def __add__(self, other):
-        """Return copy of our point, shifted by other."""
-        sum_x = self.x + other.x
-        sum_y = self.y + other.y
-        sum_z = self.z + other.z
-        return Point(sum_x, sum_y, sum_z)
+        return Point(*map(operator.add, self, other))
 
     def __sub__(self, other):
-        """Return copy of our point, shifted by other."""
-        sum_x = self.x - other.x
-        sum_y = self.y - other.y
-        sum_z = self.z - other.z
-        return Point(sum_x, sum_y, sum_z)
+        return Point(*map(operator.sub, self, other))
 
-    def __mul__(self, scalar):
-        """Return new copy of our point, scaled by given value."""
-        x, y, z = self
-        return Point(x*scalar, y*scalar, z*scalar)
+    def __mul__(self, other):
+        # return Point(*tuple([x * other for x in self]))
+        return Point(*[x * other for x in self])
 
     __rmul__ = __mul__
-
-    def __iter__(self):
-        yield self.x
-        yield self.y
-        yield self.z
